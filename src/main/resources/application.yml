@@ -1,0 +1,54 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: interview-exercise
+
+  resources:
+    static-locations: classpath:/somestaticcontent/
+  jpa:
+    show-sql: true
+    open-in-view: false
+    generate-ddl: true
+    hibernate:
+      ddl-auto: create-drop
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.H2Dialect
+        enable_lazy_load_no_trans: true
+  datasource:
+    url: jdbc:h2:file:~/.dtag-interviewexercise;MODE=MSSQLServer;AUTO_SERVER=TRUE
+    driver-class-name: org.h2.Driver
+    username: sa
+    password: sa
+  h2:
+    console:
+      path: /h2-console
+      enabled: true
+      settings:
+        web-allow-others: true
+  flyway:
+    enabled: true
+    out-of-order: false
+    baseline-on-migrate: true
+    baseline-version: 1
+  security:
+    user:
+      name: user
+      password: user
+logging:
+  level:
+    root: INFO
+
+info:
+  app:
+    name: Interview Exercise
+    description: Get yourself hired
+    version: 1.0.0 SNAPSHOT
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*, data"
+  server:
+    port: 1914
