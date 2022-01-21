@@ -16,7 +16,7 @@
 
     <properties>
         <java.version>11</java.version>
-        <h2.version>1.4.199</h2.version>
+        <h2.version>2.1.210</h2.version>
         <spock.core.version>1.2-groovy-2.4</spock.core.version>
         <groovy.version>2.5.3</groovy.version>
     </properties>
